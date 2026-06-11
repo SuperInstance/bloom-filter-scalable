@@ -1,0 +1,9 @@
+[package]
+name = "bloom-filter-scalable"
+version = "0.1.0"
+description = "A Rust library for Bloom Filter Scalable"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/casey-digennaro/bloom-filter-scalable"
+edition = "2021"
+
+[dependencies]
