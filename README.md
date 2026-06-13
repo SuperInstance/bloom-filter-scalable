@@ -51,6 +51,16 @@ Because the series $\sum p_0 \cdot r_t^i = p_0 / (1 - r_t)$ converges, the SBF a
 
 Where k = hash functions per slice, s = number of slices, m = bits per slice.
 
+### Hash Function Sizing
+
+For the initial slice with $c_0 = 1024$ and $p_0 = 0.01$:
+
+$$m_0 = \left\lceil \frac{-1024 \cdot \ln 0.01}{(\ln 2)^2} \right\rceil = 9586 \text{ bits} \approx 1.2 \text{ KB}$$
+
+$$k_0 = \left\lceil \frac{9586}{1024} \cdot \ln 2 \right\rceil = 7 \text{ hash functions}$$
+
+After 10 growth rounds at $r = 2$, the cumulative capacity exceeds 1 million elements with total memory under 12 KB — roughly 0.01 bytes per element, far below any hash set.
+
 ## Quick Start
 
 ```rust
